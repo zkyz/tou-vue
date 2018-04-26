@@ -1,16 +1,13 @@
 <template>
-  <v-app>
-    <tou/>
-    <v-badge>{{test}}</v-badge>
-  </v-app>
+  <component :is="$route.params['id']"/>
 </template>
 
 <script>
+import main from '../main'
+
 export default {
   data () {
-    return {
-      test: 'check!'
-    }
+    return main
   }
 }
 </script>

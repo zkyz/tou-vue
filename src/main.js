@@ -11,26 +11,30 @@ Vue.config.productionTip = false
 // noinspection JSUnresolvedFunction
 Vue.use(Vuetify)
 
-const tou = Vue.component('tou', (resolve) => {
-  setTimeout(() => {
-    resolve({
-      template: '<div>I am async! {{path}}</div>',
-      data () {
-        console.log('data', this)
-        return {
-          path: this.$route.path
-        }
-      }
-    })
-  }, 1000)
-})
+const components = {App}
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: {
-    App, tou
-  }
-})
+;(async () => {
+  await fetch('/static/programs.json')
+    .then(res => res.json())
+    .then(res => res.forEach(name => {
+      components[name] = Vue.component(name, function (resolve) {
+        fetch(`/static/${name}.html`)
+          .then(res => res.text())
+          .then(res => {
+            resolve({
+              template: res
+            })
+          })
+      })
+    }))
+
+  // eslint-disable-next-line
+  new Vue({
+    el: '#app',
+    template: '<App/>',
+    router,
+    components
+  })
+})()
+
+export default components
