@@ -1,0 +1,54 @@
+[
+  {
+    "icon": "lightbulb_outline",
+    "text": "노트스"
+  },
+  {
+    "icon": "touch_app",
+    "text": "다시마음다짐"
+  },
+  {
+    "divider": true
+  },
+  {
+    "heading": "Labels"
+  },
+  {
+    "icon": "add",
+    "text": "Create new label"
+  },
+  {
+    "divider": true
+  },
+  {
+    "icon": "archive",
+    "text": "Archive"
+  },
+  {
+    "icon": "delete",
+    "text": "Trash"
+  },
+  {
+    "divider": true
+  },
+  {
+    "icon": "settings",
+    "text": "Settings"
+  },
+  {
+    "icon": "chat_bubble",
+    "text": "Trash"
+  },
+  {
+    "icon": "help",
+    "text": "Help"
+  },
+  {
+    "icon": "phonelink",
+    "text": "App downloads"
+  },
+  {
+    "icon": "keyboard",
+    "text": "Keyboard shortcuts"
+  }
+]
